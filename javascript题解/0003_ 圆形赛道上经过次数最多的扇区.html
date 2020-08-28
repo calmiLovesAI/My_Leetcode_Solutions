@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <!--https://leetcode-cn.com/problems/most-visited-sector-in-a-circular-track/-->
+    <script>
+        /**
+        * @param {number} n
+        * @param {number[]} rounds
+        * @return {number[]}
+        */
+        var mostVisited = function(n, rounds) {
+            let numVisit = new Array(n).fill(0)
+            let m = rounds.length - 1
+            for(let i=0; i<m;i++){
+                let a = rounds[i]
+                let b = rounds[i+1]
+                while(a!=b){
+                    numVisit[a-1] += 1
+                    a += 1
+                    if(a>n){
+                        a = 1
+                    }
+                }
+            }
+            numVisit[rounds[m]-1] += 1
+            let res = []
+            let max_value = Math.max(...numVisit)
+            for(let j=0;j<n;j++){
+                if(numVisit[j] == max_value){
+                    res.push(j+1)
+                }
+            }
+            return res
+        };
+
+        console.log(mostVisited(4, [1, 3, 1, 2]));
+    </script>
+</body>
+
+</html>

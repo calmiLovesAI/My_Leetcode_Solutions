@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- https://leetcode-cn.com/problems/maximum-number-of-coins-you-can-get/ -->
+    <script>
+        var maxCoins = function(piles) {
+            let n = piles.length / 3
+            let res = 0
+            piles.sort((a, b)=>b-a)   // 从大到小排序
+            for (let i = 1; i < piles.length; i=i+2) {
+                res += piles[i]
+                if (i==1+2*(n-1)){
+                    break
+                }
+            }
+            return res
+        }
+
+        console.log(maxCoins([9,8,7,6,5,1,2,3,4]));
+    </script>
+
+    
+</body>
+</html>
