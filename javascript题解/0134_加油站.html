@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var canCompleteCircuit = function(gas, cost) {
+            gas_sum = gas.reduce((pre, cur)=>pre+cur)
+            cost_sum = cost.reduce((pre, cur)=>pre+cur)
+            if(gas_sum < cost_sum){
+                return -1
+            }
+            current_gas = 0
+            start_point = 0
+            for(let i=0;i<gas.length;i++){
+                current_gas += gas[i] - cost[i]
+                if(current_gas < 0){
+                    current_gas = 0
+                    start_point = i+1
+                }
+            }
+            return start_point
+        }
+
+        console.log(canCompleteCircuit([1,2,3,4,5], [3,4,5,1,2]));
+    </script>
+</body>
+</html>
