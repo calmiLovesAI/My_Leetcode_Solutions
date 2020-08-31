@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
+        var lengthOfLongestSubstring = function (s) {
+            let charOccurNum = {}
+            let res = 0
+            for (let i = 0, j=0; i < s.length; i++) {
+                // 初始化为0
+                if (charOccurNum[s[i]] == undefined){
+                    charOccurNum[s[i]] = 0
+                }
+                charOccurNum[s[i]] += 1
+                while(charOccurNum[s[i]] > 1){
+                    // 出现次数超过一次
+                    charOccurNum[s[j]] -= 1
+                    j += 1
+                }
+                res = Math.max(res, i-j+1)
+            }
+            return res
+        };
+
+        console.log(lengthOfLongestSubstring("abcabcbb"));
+    </script>
+</body>
+
+</html>

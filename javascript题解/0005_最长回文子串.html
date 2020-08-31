@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // https://leetcode-cn.com/problems/longest-palindromic-substring/
+        var longestPalindrome = function (s) {
+            let res = new String()
+            for (let i = 0; i < s.length; i++) {
+                // 回文串长度为奇数
+                let l = i - 1,
+                    r = i + 1
+                while (l >= 0 && r < s.length && s[l] == s[r]) {
+                    l--
+                    r++
+                }
+                if (res.length < r - l - 1) {
+                    res = s.slice(l + 1, r)
+                }
+
+                // 回文串长度为偶数
+                l = i,
+                    r = i + 1
+                while (l >= 0 && r < s.length && s[l] == s[r]) {
+                    l--
+                    r++
+                }
+                if (res.length < r - l - 1) {
+                    res = s.slice(l + 1, r)
+                }
+            }
+            return res
+        };
+
+        console.log(longestPalindrome("babad"));
+
+    </script>
+</body>
+
+</html>

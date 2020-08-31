@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // https://leetcode-cn.com/problems/zigzag-conversion/
+        var convert = function (s, numRows) {
+            let res = new String()
+            if (numRows==1){
+                return s
+            }
+            for (let i = 0; i < numRows; i++) {
+                if (i == 0 || i == numRows - 1) {
+                    for (let j = i; j < s.length; j += 2 * numRows - 2) {
+                        res += s[j]
+                    }
+                } else {
+                    for (let j = i, k = 2 * numRows - 2 - i; j < s.length || k < s.length; j += 2 * numRows - 2, k += 2 * numRows - 2) {
+                        if (j < s.length) {
+                            res += s[j]
+                        }
+                        if (k < s.length) {
+                            res += s[k]
+                        }
+                    }
+                }
+
+
+            }
+            return res
+        };
+
+        console.log(convert("A", 1));
+
+    </script>
+</body>
+
+</html>

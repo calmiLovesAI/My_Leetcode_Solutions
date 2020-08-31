@@ -10,6 +10,9 @@
         var canCompleteCircuit = function(gas, cost) {
             gas_sum = gas.reduce((pre, cur)=>pre+cur)
             cost_sum = cost.reduce((pre, cur)=>pre+cur)
+
+            // 因为从每个节点出发然后绕一圈回来的加油量和耗油量都是一个定值，
+            // 所以如果gas_sum < cost_sum，那么肯定没有一个节点满足
             if(gas_sum < cost_sum){
                 return -1
             }
