@@ -14,7 +14,7 @@ class Solution:
                 dp[i] = nums[i]
             else:
                 dp[i] = dp[i-1] + nums[i]
-        return max(dp)
+        return int(max(dp))
 
 
 if __name__ == '__main__':
