@@ -3,14 +3,13 @@
 from typing import List
 import math
 
+
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
         n = len(nums)
         if not nums:
             return [-1, -1]
         
-
-
         # 左右index
         l, r = 0, n-1
         while l < r:
