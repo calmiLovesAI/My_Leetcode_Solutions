@@ -1,5 +1,6 @@
 /test
-/.vscode
-/.idea
+.idea
 __pycache__
 /others
+/java_solutions/java_solutions.iml
+/java_solutions/out
