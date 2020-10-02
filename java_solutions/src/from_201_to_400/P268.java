@@ -1,5 +1,5 @@
 package from_201_to_400;
-
+// 缺失数字
 
 import java.util.Arrays;
 
@@ -24,7 +24,7 @@ class Solution {
 }
 
 
-public class P268_缺失数字 {
+public class P268 {
     public static void main(String[] args) {
         Solution s = new Solution();
         int[] nums = {9,6,4,2,3,5,7,0,1};
