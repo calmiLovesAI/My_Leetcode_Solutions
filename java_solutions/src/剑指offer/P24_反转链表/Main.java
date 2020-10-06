@@ -48,6 +48,22 @@ class Solution {
 }
 
 
+// 使用双指针
+class Solution2{
+    public ListNode reverseList(ListNode head){
+        ListNode pre = null;
+        ListNode cur = head;
+        while (cur != null){
+            ListNode t = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = t;
+        }
+        return pre;
+    }
+}
+
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("");
