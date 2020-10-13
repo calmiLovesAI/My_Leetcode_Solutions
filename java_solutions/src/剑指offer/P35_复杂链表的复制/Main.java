@@ -30,6 +30,7 @@ class Node {
 
 class Solution {
     public Node copyRandomList(Node head) {
+        // 这道题
         return head;
     }
 }
