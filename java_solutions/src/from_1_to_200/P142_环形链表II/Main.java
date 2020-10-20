@@ -25,7 +25,7 @@ class ListNode {
 }
 
 
-public class Solution {
+class Solution {
     public ListNode detectCycle(ListNode head) {
         ListNode slow, fast;
         slow = fast = head;
