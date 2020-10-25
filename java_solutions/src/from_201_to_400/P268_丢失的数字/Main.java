@@ -1,7 +1,5 @@
-package from_201_to_400;
+package from_201_to_400.P268_丢失的数字;
 // 缺失数字
-
-import java.util.Arrays;
 
 class Solution {
     public int missingNumber(int[] nums) {
@@ -24,7 +22,7 @@ class Solution {
 }
 
 
-public class P268 {
+public class Main {
     public static void main(String[] args) {
         Solution s = new Solution();
         int[] nums = {9,6,4,2,3,5,7,0,1};
