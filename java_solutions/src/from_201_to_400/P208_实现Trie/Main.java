@@ -9,7 +9,6 @@ class TrieNode{
     public TrieNode() {
         this.isEnd = false;
         this.next = new TrieNode[26];
-        Arrays.fill(this.next, null);
     }
 }
 

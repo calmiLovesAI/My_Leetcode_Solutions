@@ -1,5 +1,6 @@
 package from_801_to_1000.P820_单词的压缩编码;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 class TrieNode {
