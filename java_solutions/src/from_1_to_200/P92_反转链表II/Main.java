@@ -1,7 +1,7 @@
 package from_1_to_200.P92_反转链表II;
 
 
-public class ListNode {
+class ListNode {
     int val;
     ListNode next;
 
