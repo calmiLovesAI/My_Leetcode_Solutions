@@ -1,44 +1,24 @@
-package more_than_1001.P1603_设计停车系统;
+package from_801_to_1000.P1603_设计停车系统;
+
 
 class ParkingSystem {
 
-    private int bigNum;
-    private int mediumNum;
-    private int smallNum;
+    private final int[] arr;
 
     public ParkingSystem(int big, int medium, int small) {
-        this.bigNum = big;
-        this.mediumNum = medium;
-        this.smallNum = small;
+        arr = new int[4];
+        arr[1] = big;
+        arr[2] = medium;
+        arr[3] = small;
     }
 
     public boolean addCar(int carType) {
-        if(carType == 1){
-            if(this.bigNum==0){
-                return false;
-            }else{
-                this.bigNum--;
-            }
+        if (arr[carType] >= 1){
+            arr[carType]--;
+            return true;
+        }else{
+            return false;
         }
-
-
-        if(carType == 2){
-            if(this.mediumNum==0){
-                return false;
-            }else{
-                this.mediumNum--;
-            }
-        }
-
-        if(carType == 3){
-            if(this.smallNum==0){
-                return false;
-            }else{
-                this.smallNum--;
-            }
-        }
-
-        return true;
     }
 }
 
@@ -46,6 +26,6 @@ class ParkingSystem {
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(" ");
+
     }
 }

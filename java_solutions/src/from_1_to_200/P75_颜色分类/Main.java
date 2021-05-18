@@ -49,6 +49,30 @@ class Solution {
 }
 
 
+// LeetCode官方的一种解法
+class Solution1{
+    public void sortColors(int[] nums){
+        int n = nums.length;
+        int left = 0, right = n - 1;    //left指针用于类别0，right指针用于类别2
+        for (int i = 0; i < n; i++) {
+            while (i < right && nums[i] == 2){
+                int t = nums[i];
+                nums[i] = nums[right];
+                nums[right] = t;
+
+                right--;
+            }
+            if (nums[i] == 0){
+                int s = nums[i];
+                nums[i] = nums[left];
+                nums[left] = s;
+                left++;
+            }
+        }
+
+    }
+}
+
 
 
 public class Main {
